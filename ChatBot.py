@@ -4,13 +4,16 @@ from typing import Optional, Dict, List
 import asyncio
 from models.chatBotMessage import ChatbotMessage
 from models.qaPair import qaPair
-
+import os 
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
+if not ANTHROPIC_API_KEY:
+    raise ValueError("ANTHROPIC_API_KEY environment variable is not set")
 class ChatBot:
     def __init__(self, model="claude-3-haiku-20240307"):
         """
         Initialize the chatbot and start the first interaction.
         """
-        self.client = anthropic.Anthropic(api_key="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")
+        self.client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
         self.model = model
         self.conversation_history = []
         self.current_question = "What do you know about AI?"
