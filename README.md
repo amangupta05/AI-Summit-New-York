@@ -82,8 +82,8 @@ OPENAI_API_KEY=your_openai_api_key
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your_username/your_project_name.git
-   cd your_project_name
+   git clone https://github.com/amangupta05/AI-Summit-New-York.git
+   cd AI-Summit-New-York
    ```
 
 2. **Run the Agents**
